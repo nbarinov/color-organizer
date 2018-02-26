@@ -1,0 +1,11 @@
+.app {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.app__add-color-form {
+    margin-bottom: 2em;
+}
