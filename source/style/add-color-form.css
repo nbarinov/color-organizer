@@ -1,0 +1,18 @@
+.add-color-form {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding-bottom: 0.5em;
+
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.add-color-form__input {
+    width: 40%;
+}
+
+.add-color-form__color,
+.add-color-form__button {
+    width: 20%;
+}
