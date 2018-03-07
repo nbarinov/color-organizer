@@ -1,11 +1,19 @@
 .add-color-form {
-    display: flex;
-    justify-content: space-between;
-
     width: 100%;
     padding-bottom: 0.5em;
 
     border-bottom: 1px solid #e7e7e7;
+}
+
+.add-color-form__title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.add-color-form__fields {
+    display: flex;
+    justify-content: space-between;
 }
 
 .add-color-form__input {
@@ -15,4 +23,31 @@
 .add-color-form__color,
 .add-color-form__button {
     width: 20%;
+}
+
+@media (min-width: 768px) {
+    .add-color-form {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        
+        width: 240px;
+
+        border-bottom: none;
+    }
+
+    .add-color-form__fields {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .add-color-form__input,
+    .add-color-form__color {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    .add-color-form__button {
+        width: 50%;
+    }
 }
