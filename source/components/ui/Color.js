@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import StarRating from './StarRating';
 
-import '../style/color.css';
+import '../../style/color.css';
 
 const Color = ({ className, title, color, rating = 0, onRemove = f => f, onRate = f => f }) => (
     <section className={(className) ? className + ' color' : 'color'}>

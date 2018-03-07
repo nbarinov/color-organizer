@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Color from './Color';
 
-import '../style/color-list.css';
+import '../../style/color-list.css';
 
 const ColorList = ({ className, colors = [], onRate = f => f, onRemove = f => f }) => (
     <div className={(className) ? className + ' color-list' : 'color-list'}>

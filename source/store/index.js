@@ -25,6 +25,7 @@ const saver = store => next => action => {
 
 const storeFactory = (initialState = stateData) =>
     applyMiddleware(logger, saver)(createStore)(
+        combineReducers({ colors, sort }),
         (localStorage['redux-store']) ? JSON.parse(localStorage['redux-store']) :
         stateData
     );
