@@ -5,9 +5,9 @@ import '../style/app.css';
 
 const App = () => (
     <div className="app">
-        <Menu />
-        <NewColor />
-        <Colors />
+        <Menu className="app__menu" />
+        <NewColor className="app__add-color-form" />
+        <Colors className="app__colors" />
     </div>
 );
 

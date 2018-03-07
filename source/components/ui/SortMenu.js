@@ -9,8 +9,8 @@ const options = {
     rating: "SORTED_BY_RATING",
 }
 
-const SortMenu = ({ sort = "SORTED_BY_DATE", onSelect = f => f }) =>
-    <nav className="app__menu  sort-menu">
+const SortMenu = ({ className, sort = "SORTED_BY_DATE", onSelect = f => f }) => (
+    <nav className={(className) ? className + ' sort-menu' : 'sort-menu'}>
         <h2 className="sort-menu__title">Sort Colors</h2>
         {Object.keys(options).map((item, i) =>
             <a key={i}
@@ -22,10 +22,12 @@ const SortMenu = ({ sort = "SORTED_BY_DATE", onSelect = f => f }) =>
                 }} title={options[item]}>{item}</a>
         )}
     </nav>
+);
 
 SortMenu.propTypes = {
+    className: PropTypes.string,
     sort: PropTypes.string,
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
 }
 
 export default SortMenu
