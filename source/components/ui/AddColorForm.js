@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import '../../style/add-color-form.css';
 
-const AddColorForm = ({ className, nNewColor = f => f }) => {
+const AddColorForm = ({ className, onNewColor = f => f }) => {
     let _title, _color;
 
     const submit = e => {
