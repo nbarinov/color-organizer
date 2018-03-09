@@ -20,15 +20,21 @@
   "homepage": "https://github.com/nbarinov/color-organizer#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.9",
+    "deep-freeze": "0.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.18.2",
     "eslint-plugin-react": "^7.7.0",
+    "jest-css-modules": "^1.1.0",
     "opener": "^1.4.3",
     "postcss-loader": "^2.1.0",
+    "react-addons-test-utils": "^15.6.2",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0"
   },
@@ -40,5 +46,16 @@
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "uuid": "^3.2.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "./__tests__/global.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "global.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    }
   }
 }
