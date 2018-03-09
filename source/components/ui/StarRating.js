@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import Star from './Star';
@@ -25,6 +24,6 @@ StarRating.propTypes = {
     starsSelected: PropTypes.number,
     totalStars: PropTypes.number,
     onRate: PropTypes.func,
-}
+};
 
-export default StarRating
+export default StarRating;

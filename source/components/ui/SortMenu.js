@@ -1,15 +1,14 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import '../../style/sort-menu.css';
 
 const options = {
-    date: "SORTED_BY_DATE",
-    title: "SORTED_BY_TITLE",
-    rating: "SORTED_BY_RATING",
-}
+    date: 'SORTED_BY_DATE',
+    title: 'SORTED_BY_TITLE',
+    rating: 'SORTED_BY_RATING',
+};
 
-const SortMenu = ({ className, sort = "SORTED_BY_DATE", onSelect = f => f }) => (
+const SortMenu = ({ className, sort = 'SORTED_BY_DATE', onSelect = f => f }) => (
     <nav className={(className) ? className + ' sort-menu' : 'sort-menu'}>
         <h2 className="sort-menu__title">Sort Colors</h2>
         {Object.keys(options).map((item, i) =>
@@ -28,6 +27,6 @@ SortMenu.propTypes = {
     className: PropTypes.string,
     sort: PropTypes.string,
     onSelect: PropTypes.func,
-}
+};
 
-export default SortMenu
+export default SortMenu;

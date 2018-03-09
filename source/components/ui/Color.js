@@ -1,11 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import StarRating from './StarRating';
+import TimeAgo from './TimeAgo';
 
 import '../../style/color.css';
 
-const Color = ({ className, title, color, rating = 0, onRemove = f => f, onRate = f => f }) => (
+const Color = ({ className, title, color, rating = 0, timestamp, onRemove = f => f, onRate = f => f }) => (
     <section className={(className) ? className + ' color' : 'color'}>
         <header className="color__header">
             <h1 className="color__title">{title}</h1>
@@ -13,7 +13,8 @@ const Color = ({ className, title, color, rating = 0, onRemove = f => f, onRate 
         </header>
         <div className="color__block" style={{ backgroundColor: color }}></div>
         <footer className="color__footer">
-            <StarRating starsSelected={rating} onRate={onRate} />
+            <StarRating className="color__rating" starsSelected={rating} onRate={onRate} />
+            <TimeAgo className="color__timeago" timestamp={timestamp} />
         </footer>
     </section>
 );
@@ -26,4 +27,4 @@ Color.propTypes = {
     onRate: PropTypes.func,
 };
 
-export default Color
+export default Color;

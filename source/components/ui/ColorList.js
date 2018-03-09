@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import Color from './Color';
@@ -29,4 +28,4 @@ ColorList.propTypes = {
     onRemove: PropTypes.func,
 };
 
-export default ColorList
+export default ColorList;

@@ -20,7 +20,7 @@ export const color = (state = {}, action) => {
         default:
             return state;
     }
-}
+};
 
 export const colors = (state = [], action) => {
     switch (action.type) {
@@ -36,13 +36,13 @@ export const colors = (state = [], action) => {
         default:
             return state;
     }
-}
+};
 
-export const sort = (state = "SORTED_BY_DATE", action) => {
+export const sort = (state = 'SORTED_BY_DATE', action) => {
     switch (action.type) {
         case C.SORT_COLORS:
             return action.sortBy;
         default:
             return state;
     }
-}
+};

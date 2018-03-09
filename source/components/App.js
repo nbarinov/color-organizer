@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, NewColor, Colors } from './containers';
 
 import '../style/app.css';
@@ -11,4 +10,4 @@ const App = () => (
     </div>
 );
 
-export default App
+export default App;

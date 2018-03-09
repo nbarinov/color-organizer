@@ -13,6 +13,8 @@ const logger = store => next => action => {
 
     console.log('next state', store.getState());
     console.groupEnd();
+
+    return result;
 };
 
 const saver = store => next => action => {
@@ -27,7 +29,7 @@ const storeFactory = (initialState = stateData) =>
     applyMiddleware(logger, saver)(createStore)(
         combineReducers({ colors, sort }),
         (localStorage['redux-store']) ? JSON.parse(localStorage['redux-store']) :
-        stateData
+            initialState
     );
 
-export default storeFactory
+export default storeFactory;

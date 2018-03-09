@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import '../../style/add-color-form.css';
@@ -32,4 +31,4 @@ AddColorForm.propTypes = {
     onNewColor: PropTypes.func,
 };
 
-export default AddColorForm
+export default AddColorForm;

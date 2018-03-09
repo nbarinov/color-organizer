@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../../style/star.css';
@@ -15,4 +14,4 @@ Star.propTypes = {
     onClick: PropTypes.func,
 };
 
-export default Star
+export default Star;
