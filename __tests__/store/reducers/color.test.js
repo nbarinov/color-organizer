@@ -27,7 +27,7 @@ describe("color Reducer", () => {
             })
     });
 
-    it("RETE_COLOR success", () => {
+    it("RATE_COLOR success", () => {
         const state = {
             id: 0,
             title: 'Test Teal',
@@ -54,4 +54,36 @@ describe("color Reducer", () => {
                 rating: 3,
             });
     });
+
+    it("RATE_COLOR succes 2", () => {
+        const state = {
+            id: 0,
+            title: 'Test Teal',
+            color: '#90f4d3',
+            timestamp: "Sat Mar 09 2018 15:42:09 GMT-0800 (PST)",
+            rating: 3,
+        };
+        const action = {
+            type: C.RATE_COLOR,
+            id: 1,
+            rating: 5,
+        }
+        const results = color(state, action);
+
+        deepFreeze(state);
+        deepFreeze(action);
+
+        expect(results)
+            .toEqual({
+                id: 0,
+                title: 'Test Teal',
+                color: '#90f4d3',
+                timestamp: "Sat Mar 09 2018 15:42:09 GMT-0800 (PST)",
+                rating: 3,
+            });
+    });
+
+    it("Default object for incorrect action", () =>
+        expect(color()).toEqual({})
+    );
 });
