@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddColorFrom /> UI Component Rendering for UI renders correct properties 1`] = `"<form class=\\"add-color-form\\"><h2 class=\\"add-color-form__title\\">Add Color</h2><div class=\\"add-color-form__fields\\"><input type=\\"text\\" class=\\"add-color-form__input\\" placeholder=\\"Color title...\\" required=\\"\\"/><input type=\\"color\\" class=\\"add-color-form__color\\" required=\\"\\"/><button class=\\"add-color-form__button\\">Add new color</button></div></form>"`;
