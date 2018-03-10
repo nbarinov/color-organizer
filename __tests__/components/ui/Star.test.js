@@ -36,4 +36,10 @@ describe("<Star /> UI Component", () => {
 
         expect(_click).toBeCalled();
     });
+
+    it("Clicking default button does not cause Error", () => {
+        shallow(<Star />)
+            .find('div.star')
+            .simulate('click')
+    });
 });
