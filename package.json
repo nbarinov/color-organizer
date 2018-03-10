@@ -60,7 +60,7 @@
     "verbose": true,
     "collectCoverage": true,
     "notify": true,
-    "collectCoverageFrom": ["src/**"],
+    "collectCoverageFrom": ["source/**/*.js"],
     "coverageThreshold": {
       "global": {
         "branches": 0,
