@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortMenu /> UI Component Rendering for UI Renders Correctly 1`] = `"<nav class=\\"sort-menu\\"><h2 class=\\"sort-menu__title\\">Sort Colors</h2><a href=\\"#\\" class=\\"sort-menu__item\\" title=\\"SORTED_BY_DATE\\">date</a><a href=\\"#\\" class=\\"sort-menu__item sort-menu__item--selected\\" title=\\"SORTED_BY_TITLE\\">title</a><a href=\\"#\\" class=\\"sort-menu__item\\" title=\\"SORTED_BY_RATING\\">rating</a></nav>"`;
