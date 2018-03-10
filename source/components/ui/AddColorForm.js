@@ -1,11 +1,19 @@
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import '../../style/add-color-form.css';
 
-const AddColorForm = ({ className, onNewColor = f => f }) => {
-    let _title, _color;
+class AddColorForm extends Component {
+    constructor(props) {
+        super(props);
 
-    const submit = e => {
+        this.submit = this.submit.bind(this);
+    }
+
+    submit(e) {
+        const { _title, _color } = this.refs;
+        const { onNewColor } = this.props;
+
         e.preventDefault();
 
         onNewColor(_title.value, _color.value);
@@ -13,22 +21,30 @@ const AddColorForm = ({ className, onNewColor = f => f }) => {
         _title.value = '';
         _color.value = '#000000';
         _title.focus();
-    };
+    }
 
-    return (
-        <form onSubmit={submit} className={(className) ? className + ' add-color-form' : 'add-color-form'}>
-            <h2 className='add-color-form__title'>Add Color</h2>
-            <div className="add-color-form__fields">
-                <input type="text" className="add-color-form__input" ref={input => _title = input} placeholder="Color title..." required />
-                <input type="color" className="add-color-form__color" ref={input => _color = input} required />
-                <button className="add-color-form__button">Add new color</button>
-            </div>
-        </form>
-    );
-};
+    render() {
+        const { className } = this.props;
+
+        return (
+            <form onSubmit={this.submit} className={(className) ? className + ' add-color-form' : 'add-color-form'}>
+                <h2 className='add-color-form__title'>Add Color</h2>
+                <div className="add-color-form__fields">
+                    <input type="text" className="add-color-form__input" ref="_title" placeholder="Color title..." required />
+                    <input type="color" className="add-color-form__color" ref="_color" required />
+                    <button className="add-color-form__button">Add new color</button>
+                </div>
+            </form>
+        );
+    }
+}
 
 AddColorForm.propTypes = {
     onNewColor: PropTypes.func,
+};
+
+AddColorForm.defaultProps = {
+    onNewColor: f => f,
 };
 
 export default AddColorForm;
