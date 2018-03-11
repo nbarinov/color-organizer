@@ -13,8 +13,8 @@ const ColorDetails = ({ className, title, color, history, location }) => {
             <Whoops404 location={location} /> :
             <section
                 className={(className) ? className + ' color-details' : 'color-details'}
-                style={{ backgroundColor: color }}
-                onClick={() => history.goBack()}>
+                style={{ backgroundColor: color }}>
+                <button className={`color-details__button color-details__button--${contrst}`} onClick={(e) => { e.preventDefault(); history.goBack(); }}>&#8249; Go Back</button>
                 <h1 className={`color-details__title color-details__title--${contrst}`}>{title}</h1>
                 <h2 className={`color-details__color-code  color-details__color-code--${contrst}`}>{color}</h2>
             </section>
