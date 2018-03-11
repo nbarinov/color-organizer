@@ -1,3 +1,5 @@
+import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import StarRating from './StarRating';
@@ -5,19 +7,39 @@ import TimeAgo from './TimeAgo';
 
 import '../../style/color.css';
 
-const Color = ({ className, title, color, rating = 0, timestamp, onRemove = f => f, onRate = f => f }) => (
-    <section className={(className) ? className + ' color' : 'color'}>
-        <header className="color__header">
-            <h1 className="color__title">{title}</h1>
-            <button className="color__remove" onClick={onRemove} title="remove color">x</button>
-        </header>
-        <div className="color__block" style={{ backgroundColor: color }}></div>
-        <footer className="color__footer">
-            <StarRating className="color__rating" starsSelected={rating} onRate={onRate} />
-            <TimeAgo className="color__timeago" timestamp={timestamp} />
-        </footer>
-    </section>
-);
+class Color extends Component {
+    render() {
+        const { className, id, title, color, rating, timestamp, onRate, onRemove, history } = this.props;
+        
+        return (
+            <section className={(className) ? className + ' color' : 'color'}>
+                <header className="color__header">
+                    <h1 ref="title" className="color__title" onClick={() => history.push(`/${id}`)}>{title}</h1>
+                    <button className="color__remove" onClick={onRemove} title="remove color">x</button>
+                </header>
+                <div className="color__block" style={{ backgroundColor: color }} onClick={() => history.push(`/${id}`)}></div>
+                <footer className="color__footer">
+                    <StarRating className="color__rating" starsSelected={rating} onRate={onRate} />
+                    <TimeAgo className="color__timeago" timestamp={timestamp} />
+                </footer>
+            </section>
+        );
+    }
+}
+
+// const Color = ({ className, title, color, rating = 0, timestamp, onRemove = f => f, onRate = f => f }) => (
+//     <section className={(className) ? className + ' color' : 'color'}>
+//         <header className="color__header">
+//             <h1 className="color__title">{title}</h1>
+//             <button className="color__remove" onClick={onRemove} title="remove color">x</button>
+//         </header>
+//         <div className="color__block" style={{ backgroundColor: color }}></div>
+//         <footer className="color__footer">
+//             <StarRating className="color__rating" starsSelected={rating} onRate={onRate} />
+//             <TimeAgo className="color__timeago" timestamp={timestamp} />
+//         </footer>
+//     </section>
+// );
 
 Color.propTypes = {
     title: PropTypes.string.isRequired,
@@ -27,4 +49,10 @@ Color.propTypes = {
     onRate: PropTypes.func,
 };
 
-export default Color;
+Color.defaultProps = {
+    rating: 0,
+    onRate: f => f,
+    onRemove: f => f,
+};
+
+export default withRouter(Color);

@@ -19,7 +19,7 @@
 }
 
 .sort-menu__item--selected {
-    font-weight: 400;
+    color: #ff0000;
 }
 
 @media (min-width: 768px) {
