@@ -1,21 +1,21 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/App';
 import storeFactory from './store';
 
-const store = storeFactory();
+const store = storeFactory(false, window.__INITIAL_STATE__);
 
 window.React = React;
 window.store = store;
 
-render(
+hydrate(
     <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
             <App />
-        </HashRouter>
+        </BrowserRouter>
     </Provider>, 
     document.getElementById('react-container')
 );
